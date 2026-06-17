@@ -6,6 +6,8 @@ I completed the **Pre-Security** learning path on TryHackMe to solidify my found
 * **Issued By:** [TryHackMe](https://tryhackme.com/)
 * **Focus Areas:** Network Fundamentals, How the Web Works, Computer Fundamentals, Operating Systems Basics, Software Basics and Attacks and Defences
 
+<img width="1354" height="959" alt="THM-17Q374LEDO" src="https://github.com/user-attachments/assets/f94bd4cf-1810-4ead-84a1-b171db4faf15" />
+
 ---
 
 ## 🧠 Key Domains & Hands-on Lab Mastery
