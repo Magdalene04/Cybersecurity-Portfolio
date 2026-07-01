@@ -89,3 +89,85 @@ Let's say that, we have found a gibberish sentence during a security investigati
 1) At which step would you determine, "What do I want to accomplish? <br>
 **Ans:** 1
 
+## Practice, Practice, Practice
+More options on operations in detail.
+
+### Extractors
+Extractors extract IP addresses, Domain Names and URL's.
+
+* The **Extract IP addresses** will extract any valid IPv4/6 address from any given input. 
+* The **Extract email addresses** extracts any strings and characters with this format, anything@domain[.]com. Examples of domains include hotmail.com, google.com
+* **Extract URLs** extracts Uniform Resource Locator, commonly known as URL. , a URL is the address used to access resources on the internet.
+
+### Date and Time
+This operation is based on date and time to set an operation or convert it into another format. 
+
+A UNIX timestamp is a 32-bit value representing the number of seconds since January 1, 1970 UTC (the UNIX epoch). To convert **"Fri Sep 6 20:30:22 +04 2024"** into a UNIX Timestamp, use the operations **To UNIX Timestamp**, where the result would be **1725654622**. If you wish to convert it back to a more readable format, you can use **From UNIX Timestamp**.
+
+### Data Format
+The specific data formts are listed in the table below
+
+| Operations | Description | Examples |
+| --- | --- | --- |
+| **From Base64** | This operation decodes data from an ASCII Base64 string back into its raw format. | `V2VsY29tZSB0byB0cnloYWNrbWUh` becomes `Welcome to tryhackme!` |
+| **URL Decode** | Converts URI/URL percent-encoded characters back to their raw values. | `https%3A%2F%2Fgchq%2Egithub%2Eio%2FCyberChef%2F` becomes `https://gchq.github.io/CyberChef/` |
+| **From Base85** | Notation for encoding arbitrary byte data. It is usually more efficient than Base64. This operation decodes data from an ASCII string (with an alphabet of your choosing, presets included). | `BOu!rD]j7BEbo7` becomes `hello world` |
+| **From Base58** | Is a notation for encoding arbitrary byte data. It differs from Base64 by removing efficiently misread characters (i.e. l, I, 0, and O) to improve human readability. | `AXLU7qR` becomes `Thm58` |
+| **To Base62** | Is a notation for encoding arbitrary byte data using a restricted set of symbols that humans can conveniently use and process by computers. The high number base results in shorter strings than with the decimal or hexadecimal system. | `Thm62` becomes `6NiRkOY` |
+
+#### Questions:
+1) What is the hidden email address? <br>
+**Ans:** hidden@hotmail.com
+
+<img width="1916" height="633" alt="image" src="https://github.com/user-attachments/assets/5d241a77-2ac7-4509-8609-640248d77b8f" />
+
+2) What is the hidden IP address that ends in .232? <br>
+**Ans:** 102.20.11.232
+
+<img width="1919" height="642" alt="image" src="https://github.com/user-attachments/assets/9bb9ea59-114b-4dd7-8b57-03368c9bffce" />
+
+3) Which domain address starts with 'T'? <br>
+**Ans:** TryHackMe.com
+
+<img width="1919" height="658" alt="image" src="https://github.com/user-attachments/assets/a4d77bcc-342d-4918-a586-d69ba73064c6" />
+
+4) What is the binary value of the decimal number 78? <br>
+**Ans:** 01001110
+
+<img width="1919" height="668" alt="image" src="https://github.com/user-attachments/assets/913dc612-81c7-4f72-a34f-a33dea057c2a" />
+
+5) What is the URL encoded value of https://tryhackme.com/r/careers? <br>
+**Ans:** https%3A%2F%2Ftryhackme%2Ecom%2Fr%2Fcareers
+
+<img width="1919" height="652" alt="image" src="https://github.com/user-attachments/assets/8ec09cfe-33b8-4c07-a5d0-ef0ab3d01ab4" />
+
+## Your First Official Cook
+#### Questions:
+1) Using the file you downloaded in Task 5, which IP starts and ends with "10"? <br>
+**Ans:** 10.10.2.10
+
+<img width="1919" height="623" alt="image" src="https://github.com/user-attachments/assets/54f7c20a-50a9-4060-835c-d9f82e0fb580" />
+
+2) What is the base64 encoded value of the string "Nice Room!"? <br>
+**Ans:** TmljZSBSb29tIQ==
+
+<img width="1919" height="593" alt="image" src="https://github.com/user-attachments/assets/8196ee05-a249-4d7c-8875-b7c2210dabb0" />
+
+3) What is the URL decoded value for https%3A%2F%2Ftryhackme%2Ecom%2Fr%2Froom%2Fcyberchefbasics? <br>
+**Ans:** https://tryhackme.com/r/room/cyberchefbasics
+
+<img width="1919" height="611" alt="image" src="https://github.com/user-attachments/assets/c330a005-dd68-40e1-844f-f747d0fd3e9e" />
+
+4) What is the datetime string for the Unix timestamp 1725151258? <br>
+**Ans:** Sun 1 September 2024 00:40:58 UTC
+
+<img width="1919" height="623" alt="image" src="https://github.com/user-attachments/assets/3c5ab7c9-fc23-41c0-994f-109da26234ef" />
+
+5)  What is the Base85 decoded string of the value <+oue+DGm>Ap%u7? <br>
+**Ans:** This is fun!
+
+<img width="1919" height="647" alt="image" src="https://github.com/user-attachments/assets/f5e90b31-3506-421e-ba9d-a6778c26d2af" />
+
+## Conclusion
+
+Through this room, I learned the core concepts of web data formats and encoding methods that are commonly used in cyber security operations. By working through the hands-on exercises, I took notes on how to effectively utilize CyberChef to manipulate, decode, and analyze various data structures like Base64, URL encoding, Base58, Base62, and Base85. Mastering these conversion techniques gives me a solid foundation for analyzing obfuscated scripts, decoding network traffic, and working with defensive security tools in the future.
