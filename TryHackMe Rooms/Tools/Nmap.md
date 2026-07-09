@@ -1,5 +1,5 @@
 # NMAP
-Nmap
+Nmap known as network mapper is a tool used to scan networks for open ports, service, service versions, OS detection etc. It was found on 1997 so till now it's been updated for more complex operations.
 
 There are totally 65535 ports ranging from 0 to 65354, in which 1024 ports ranging from 0 - 1023 are well-known standard ports.
 
@@ -160,5 +160,37 @@ Questions:
 **Microsoft Windows**
 
 ## ICMP Network Scanning
+Nmap sends an ICMP packet to each possible IP address for the specified network. When it receives a response, it marks the IP address that responded as being alive.
+
+To perform a ping sweep, we use the -sn switch in conjunction with IP ranges which can be specified with either a hypen (-) or CIDR notation. i.e. we could scan the 192.168.0.x network using:
+
+nmap -sn 192.168.0.1-254 or nmap -sn 192.168.0.0/24
+
+Questions:
+1) How would you perform a ping sweep on the 172.16.x.x network (Netmask: 255.255.0.0) using Nmap? (CIDR notation) <br>
+**nmap -sn 172.16.0.0/16**
+
+## NSE Scripts: Overview
+The Nmap Scripting Engine (NSE) is an incredibly powerful addition to Nmap, extending its functionality quite considerably. NSE Scripts are written in the Lua programming language, and can be used to do a variety of things: from scanning for vulnerabilities, to automating exploits for them. The NSE is particularly useful for reconnaisance, however, it is well worth to note that it is an extensive library.
+
+There are many categories available. Some useful categories include:
+
+* safe:- Won't affect the target
+* intrusive:- Not safe: likely to affect the target
+* vuln:- Scan for vulnerabilities
+* exploit:- Attempt to exploit a vulnerability
+* auth:- Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+* brute:- Attempt to bruteforce credentials for running services
+* discovery:- Attempt to query running services for further information about the network (e.g. query an SNMP server).
+
+Questions:
+1) What language are NSE scripts written in? <br>
+**Lua**
+
+2) Which category of scripts would be a very bad idea to run in a production environment? <br>
+**Intrusive**
+
+## NSE Scripts: Working with NSE
+
 
 
