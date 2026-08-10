@@ -17,6 +17,42 @@ In this, under debugging tab, I see app.js under which we have three fields whic
 
 So, AWS's Identity Pool sometimes has this issue, to create guest accounts for users who have not created the accounts. But this happens when a user gets denied or chooses for a guest account. But, this happened now for us without us authorizing for it. Guest permissions are fine, until it follows the principle of least privilege.
 
+Now, with the identity_pool_id identified, I will switch to the terminal. We will issue temporary credentials which will require an Identity ID which is tied to the pool. 
+
+```
+aws cognito-identity get-id \
+  --region us-east-1 \
+  --identity-pool-id "us-east-1:836c0949-292d-485b-b532-52d5ca7bb688"
+```
+
+This command will ask AWS cognito to generate a unique session identifier for an unauthenticated user, who is requesting access to the pool.
+
+<img width="902" height="276" alt="image" src="https://github.com/user-attachments/assets/0f000faa-ba0f-4633-aae5-6ae544f7aca8" />
+
+Now, I exchanged this identity id for a temporary AWS Credentials, for which I passed the IdentityID back to Cognito to receive the temporary security keys.
+
+```
+aws cognito-identity get-credentials-for-identity \
+  --region us-east-1 \
+  --identity-id "us-east-1:4d571309-b007-c7f4-3b37-4d939ba55c13"
+```
+
+<img width="1909" height="819" alt="image" src="https://github.com/user-attachments/assets/de6cf320-57d9-4d8e-b34e-7c6a67d40cbf" />
+
+Next, I will load these temporary credentials into the terminal, exported as environment variables.
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
