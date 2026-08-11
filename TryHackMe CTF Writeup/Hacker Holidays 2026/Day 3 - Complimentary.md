@@ -74,12 +74,10 @@ This command will scan and target the complimentary-GuestWellnessProfiles instea
 
 And from Vibe's profile we have successfully retrieved the flag!
 
-**What's the flag?**
+**What's the flag?** <br>
 THM{fr33_app_fr33_d4t4!}
 
 <img width="1754" height="554" alt="image" src="https://github.com/user-attachments/assets/2e40c6bd-83da-4b7c-af14-3ec310ec3cee" />
-
-# TryHackMe: Hacker Holiday 2026 - Write-up & Security Findings
 
 ## Lesson Learned
 The root cause of this vulnerability lies in over-privileged authorization assigned to unauthenticated users. While front-end logic attempted to restrict data retrieval to the current visitor, the underlying AWS IAM role assigned to the Cognito Identity Pool granted unrestricted `dynamodb:Scan` access. This exposed the entire database table to cross-tenant data leaks by allowing unauthenticated actors to bypass client-side controls.
