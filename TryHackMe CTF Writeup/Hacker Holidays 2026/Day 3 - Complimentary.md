@@ -22,7 +22,7 @@ Now, with the identity_pool_id identified, I will switch to the terminal. We wil
 ```
 aws cognito-identity get-id \
   --region us-east-1 \
-  --identity-pool-id "us-east-1:836c0949-292d-485b-b532-52d5ca7bb688"
+  --identity-pool-id "us-east-1:836c...."
 ```
 
 This command will ask AWS cognito to generate a unique session identifier for an unauthenticated user, who is requesting access to the pool.
@@ -34,7 +34,7 @@ Now, I exchanged this identity id for a temporary AWS Credentials, for which I p
 ```
 aws cognito-identity get-credentials-for-identity \
   --region us-east-1 \
-  --identity-id "us-east-1:4d571309-b007-c7f4-3b37-4d939ba55c13"
+  --identity-id "us-east-1:4d57...."
 ```
 
 <img width="1895" height="578" alt="image" src="https://github.com/user-attachments/assets/59e73424-1a71-4e06-ac59-bb397898ac09" />
@@ -42,9 +42,9 @@ aws cognito-identity get-credentials-for-identity \
 Next, I will load these temporary credentials into the terminal, exported as environment variables.
 
 ```
-export AWS_ACCESS_KEY_ID="ASIAU2VYTBGYOXWUFX3G"
-export AWS_SECRET_ACCESS_KEY="jqRY3hRjLsa40dbFRtheqwETTqNg/Al9sTEgK5Ba"
-export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEOj//////////wEaCXVzLWVhc3QtMSJHMEUCICSM9bpql05r+mvs7cKeh9rKmSywSIN2rDn/2I5okIqAAiEAksg+1E0e6q4dTxoQ5Ot8smzL0PzAPSFo5TKz9YzQOc4qtwUIsP//////////ARAAGgwzMzIxNzMzNDcyNDgiDMG5EOH5jqZkdH6VtSqLBZ3bT1Zdmk7hI4a/R7+E8/C0wcrrkh95cCm4ZfuiljLRz+gt+WumJMKzglm7d0Iol0O9ddjrg8DTRXvEkJQjjQXpisfXIWEbW7KykS953E3YOlLAHCxuVBwVdRziN3OJbQjlCDRm+8a1F1wYDPySDvghMegVIIODPtSzdRBIVKPc1pd0Lm9MvDMmILJUndqqu6sF0OthmTElbmS4YZAvhjXJGo/73FcFyuLapW9wx2k9dhjQCzKCiez92HD879bn455yIyJFwJsLIy4wj+BSJosEIkXsneNmrQH+XJEfUcr/o8hX67OXqKrlDZbk00gh9Cyf0YH9uWgaDm1vwsIcJosNdZP6AHZo31F/KEE4qsUqDvhAS6FjPs8wPenAZbinJUAuYc7uo+aH0E7LYPRI49lpePCf0l8JhZQO6EZAmB0ee4AZwTGwP3jsTSUqKErIHwBx7TWCpVuXXQcIE3dE8fL1m8EmBNTueVoBOiL0SOoQqSKYJANorDAC0JPf7HGzehGJsQiBKUkSjJtThdet6UQJSYyDe2n6XFH7lFhX1DdHFCoOIfuklbkRuRMDDf3fPvmdS6sMB5XHFatu7xA1MOlOstgFn0cRVvSSv4YCEs4wKcDu98C1nPAWSEOWAXE1Ru0d8QnMNQnyPymCrysTBtZRhkM6ugUGPzh3Y+rm25mLW/BXRB7+rQPPzZoty7X0UEHTIBZOVacoKm6cwDuIfUyHWEuUgR95PfJ4S/Ac6PPqaS9U2nldsAnpj1D6/mRL+Y+Hlf3rvyiMMCtyP93G+C3rDzBiHuXqr6VyTTOxQky+joQjofV1mWWKMki4RfKzqjpwPFuR39FCxokJ8TfKaDvHLPfzNwEnuSXSojCbl+vTBjreAm0oTmx6RO0tMz0UrHBElAcD+z27v1NcjRLip2JK383d241L5gSjr/VhDTDApiBTYkwOeuQo1iMCRDECJ1MwJ6Ob4DulPbl6ZD2TAzh8N7lQuMgfLMCNWEEJbNyBB8gJc5gzQIC01tQ9mHtcU7s89rEhZUnvIFXYhF6kir+MmjnR7pG5lh6hz9e4tkxTcon9q0Exy85rs+mgSDOTAlwzlOwVBPpvKYesx3OWQ33eWh6sBbCOP4OPFksindU+nllUYuR9P8bIOLyfUQjFTEQ1WfTQCe0IykYQK7zzBRbdoL3KLmtd+nkzdoWub1JJj62XSjO0nW0ttr25VJjW5LCVjZIinqbu0dED/CPgzabmxFhRjxtUxnjIPeDIyQejaTPVbH6l2ms4pCnAQpxGPt+59aqO8s6bxapfeb8Glc/gbL75phciQKYGVWQxh5E5N8Z/lPoVMdxLWkkfbFu58zj2"
+export AWS_ACCESS_KEY_ID="ASIAU2VYTB..."
+export AWS_SECRET_ACCESS_KEY="jqRY3hR..."
+export AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEO......"
 export AWS_DEFAULT_REGION="us-east-1"
 ```
 
